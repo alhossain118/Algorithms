@@ -39,18 +39,27 @@ LinkedList.prototype.removeTail = function() {
   else this.head = null;
   return val
 }
+LinkedList.prototype.search = function(searchValue){
+  var currentNode = this.head;
+  while(currentNode){
+    if(currentNode.value === searchValue) return currentNode.value
+    currentNode = currentNode.next;
+  }
+  return null;
+};
 
 var ll = new LinkedList();
 
 
 ll.addToHead(100);
 ll.addToHead(200);
-ll.addToTail(300);
+ll.addToTail(300)
+ll.addToTail(400);
 // ll.removeTail();
 // ll.addToTail(400);
 // ll.removeHead();
 // ll.addToHead(20);
-console.log(ll.removeTail())
+console.log(ll.search(4040))
 
 // function LinkedList(){
 //   this.head = null;
