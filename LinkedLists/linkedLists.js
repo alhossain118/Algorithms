@@ -47,6 +47,22 @@ LinkedList.prototype.search = function(searchValue){
   }
   return null;
 };
+LinkedList.prototype.indexOf = function(value){
+  var arr = [];
+  var index = 0;
+  var currentNode = this.head;
+
+  while(currentNode){
+    if(currentNode.value === value){
+      arr.push(index); 
+    }
+    currentNode = currentNode.next
+    index++;
+
+  }
+  return arr;
+
+}
 
 var ll = new LinkedList();
 
@@ -55,11 +71,14 @@ ll.addToHead(100);
 ll.addToHead(200);
 ll.addToTail(300)
 ll.addToTail(400);
+ll.addToTail(400);
+
 // ll.removeTail();
 // ll.addToTail(400);
 // ll.removeHead();
 // ll.addToHead(20);
-console.log(ll.search(4040))
+// console.log(ll.search(4040))
+console.log(ll.indexOf(400))
 
 // function LinkedList(){
 //   this.head = null;
